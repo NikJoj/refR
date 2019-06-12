@@ -1,0 +1,38 @@
+{
+    "manifest_version": 2,
+    "name": "refR",
+    "version": "0.1",
+
+    "icons" : {
+        "128" : "logo.png"
+      },
+
+    "content_scripts": [
+        {  
+          "run_at": "document_end",
+          "matches": [
+            "<all_urls>"
+          ],
+          "js": ["content.js"]
+        }
+      ],
+
+      "web_accessible_resources": ["popup.html"],
+
+      "browser_action": {
+        "default_icon": "logo.png"
+      },
+
+      "background": {
+        "scripts": ["background.js"]
+      },
+
+      "permissions": [
+        "storage",
+        "contextMenus",
+        "tabs",
+        "activeTab",
+        "https://ajax.googleapis.com/"
+     ]
+      
+  }
