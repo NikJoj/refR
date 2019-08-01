@@ -1,6 +1,6 @@
 chrome.runtime.onMessage.addListener(function(msg, sender){
 
-    if(msg == "toggle"){
+    if(msg.toggle){
         toggle();
     }
 })
@@ -22,7 +22,6 @@ function toggle(){
     if(iframe.style.width == "0px"){
         iframe.style.width="400px";
         iframe.src = chrome.extension.getURL("popup.html")
-
     }
     else{
         iframe.style.width="0px";
